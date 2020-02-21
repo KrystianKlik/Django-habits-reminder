@@ -127,3 +127,4 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+Django-habits-reminder/.vs/Django-habits-reminder/v16/.suo
