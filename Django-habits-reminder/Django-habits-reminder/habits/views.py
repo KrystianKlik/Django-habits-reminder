@@ -8,6 +8,7 @@ class PostListView(ListView):
     model = Habits
     template_name = 'habits/index.html'
     context_object_name = 'habits'
+    ordering = ['priority']
 
     def get_queryset(self):
         return Habits.objects.filter(user=self.request.user)
