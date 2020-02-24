@@ -1,5 +1,16 @@
 ﻿{% extends "habits/base.html" %}
 
 {% block content %}
-<h1 class="main">Login</h1>
+<div class="content-register">
+    <form method="post">
+        {% csrf_token %}
+        <fieldset>
+            <legend>Log in</legend>  
+            {{ form.as_p }}
+        </fieldset>
+        <button type="submit">Login</button>
+    </form>
+    <small>Need An Accout? <a href="{% url 'register' %}">Create one</a></small>
+</div>
+
 {% endblock content %}

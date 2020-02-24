@@ -46,14 +46,19 @@
     <Compile Include="Django_habits_reminder\wsgi.py" />
     <Compile Include="users\admin.py" />
     <Compile Include="users\apps.py" />
+    <Compile Include="users\forms.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="users\migrations\__init__.py" />
     <Compile Include="users\models.py" />
+    <Compile Include="users\signals.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="users\tests.py" />
     <Compile Include="users\views.py" />
     <Compile Include="users\__init__.py" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="assets\scss\" />
     <Folder Include="Django_habits_reminder\" />
     <Folder Include="habits\" />
     <Folder Include="habits\migrations\" />
@@ -75,8 +80,7 @@
     <Folder Include="habits\static\scss\" />
     <Folder Include="habits\templates\" />
     <Folder Include="habits\templates\habits\" />
-    <Folder Include="assets\" />
-    <Folder Include="test\" />
+    <Folder Include="media\" />
     <Folder Include="users\" />
     <Folder Include="users\migrations\" />
     <Folder Include="users\templates\" />
@@ -202,16 +206,20 @@
     <Content Include="habits\static\admin\js\vendor\xregexp\LICENSE.txt" />
     <Content Include="habits\static\admin\js\vendor\xregexp\xregexp.js" />
     <Content Include="habits\static\admin\js\vendor\xregexp\xregexp.min.js" />
-    <Content Include="habits\static\demo.css" />
-    <Content Include="habits\static\demo.css.map" />
     <Content Include="habits\static\main.scss" />
-    <Content Include="habits\templates\habits\base.html" />
-    <Content Include="habits\templates\habits\index.html" />
-    <Content Include="requirements.txt" />
-    <Content Include="assets\scss\_main.scss">
+    <Content Include="habits\static\scss\login.scss">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="habits\static\scss\variables.scss">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="habits\templates\habits\base.html" />
+    <Content Include="habits\templates\habits\home.html" />
+    <Content Include="habits\templates\habits\index.html" />
+    <Content Include="media\profile-placeholder.png" />
+    <Content Include="requirements.txt" />
     <Content Include="users\templates\users\login.html" />
+    <Content Include="users\templates\users\logout.html" />
     <Content Include="users\templates\users\register.html" />
   </ItemGroup>
   <ItemGroup>

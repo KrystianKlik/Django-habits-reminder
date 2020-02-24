@@ -1,9 +1,7 @@
-<html>
-<head><title></title></head>
+{% extends "habits/base.html" %}
 
-<body>
+{% block content %}
 
-{{ content }}
+<a href="{% url 'register' %}" >register</a>
 
-</body>
-</html>
+{% endblock content %}

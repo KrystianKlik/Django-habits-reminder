@@ -1,0 +1,31 @@
+﻿{% extends "habits/base.html" %}
+
+{% block content %}
+
+<div class="media">
+    <img class="user-image" src="{{ user.profile.image.url }}">
+    <div class="user-info">
+        <h2>Hello {{ user.username }}</h2>    
+        <p>{{ user.email }}</p>
+    </div>
+    <div class="strike-info">
+        <p>Habbits quantity: {{ user.profile.habits_quantity }}</p>
+        <p>Longest strike: {{ user.profile.longest_strike }}</p>
+        <p>Current strike count: {{ user.profile.current_strike_count }}</p>
+    </div>
+</div>
+
+<div class="content-register">
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <fieldset>
+            <legend>Profile Info</legend>  
+            {{ u_form.as_p }}
+            {{ p_form.as_p }}
+        </fieldset>
+        <button type="submit">Update</button>
+    </form>
+</div>
+
+
+{% endblock content %}
