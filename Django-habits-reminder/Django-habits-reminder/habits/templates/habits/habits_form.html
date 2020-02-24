@@ -1,0 +1,15 @@
+﻿{% extends "habits/base.html" %}
+
+{% block content %}
+<div class="content-register">
+    <form method="post">
+        {% csrf_token %}
+        <fieldset>
+            <legend>Habit</legend>  
+            {{ form.as_p }}
+        </fieldset>
+        <button type="submit">Save</button>
+    </form>
+</div>
+
+{% endblock content %}

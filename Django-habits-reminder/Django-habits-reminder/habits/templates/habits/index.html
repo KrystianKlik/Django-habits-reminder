@@ -8,6 +8,13 @@
         <article class="media content-section">
           <div class="media-body">
             <p class="article-content">{{ habit.name }}</p>
+            <p>{{ habit.status }}</p>
+              {% if habit.status %}
+           <input type="checkbox" id="done_checkbox" name="habit" checked>
+              {% else %}
+           <input type="checkbox" id="done_checkbox" name="habit">
+              {% endif %}
+           <label for="habit">Done?</label>
           </div>
         </article>
     {% endfor %}

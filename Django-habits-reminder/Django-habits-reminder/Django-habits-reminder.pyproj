@@ -217,6 +217,8 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="habits\templates\habits\base.html" />
+    <Content Include="habits\templates\habits\habits_confirm_delete.html" />
+    <Content Include="habits\templates\habits\habits_form.html" />
     <Content Include="habits\templates\habits\home.html" />
     <Content Include="habits\templates\habits\index.html" />
     <Content Include="media\profile-placeholder.png" />
