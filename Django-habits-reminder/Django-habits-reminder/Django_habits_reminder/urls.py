@@ -4,7 +4,7 @@ Definition of urls for Django_habits_reminder.
 
 from datetime import datetime
 from django.contrib.auth import views as auth_views
-from django.urls import path
+from django.urls import path, include
 from django.contrib import admin
 from django.contrib.auth.views import LoginView, LogoutView
 
@@ -18,7 +18,7 @@ from habits import views as habits
 
 
 urlpatterns = [
-    path('', habits.index, name='index'),
+    path('', include('habits.urls')),
     path('admin/', admin.site.urls),
     path('register/', users.register, name='register'),    
     path('login/', auth_views.LoginView.as_view(template_name = 'users/login.html') , name='login'),

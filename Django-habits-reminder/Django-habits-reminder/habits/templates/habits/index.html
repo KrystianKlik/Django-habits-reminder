@@ -4,4 +4,13 @@
 
 <a href="{% url 'register' %}" >register</a>
 
+    {% for habit in habits %}
+        <article class="media content-section">
+          <div class="media-body">
+            <p class="article-content">{{ habit.name }}</p>
+          </div>
+        </article>
+    {% endfor %}
+
 {% endblock content %}
+

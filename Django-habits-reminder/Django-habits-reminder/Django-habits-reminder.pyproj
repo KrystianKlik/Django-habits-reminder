@@ -37,6 +37,9 @@
     <Compile Include="habits\migrations\__init__.py" />
     <Compile Include="habits\models.py" />
     <Compile Include="habits\tests.py" />
+    <Compile Include="habits\urls.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="habits\views.py" />
     <Compile Include="habits\__init__.py" />
     <Compile Include="manage.py" />
