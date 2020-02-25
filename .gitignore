@@ -128,3 +128,4 @@ dmypy.json
 # Pyre type checker
 .pyre/
 Django-habits-reminder/.vs/Django-habits-reminder/v16/.suo
+Django-habits-reminder/Django-habits-reminder/habits/static/typescript/node_modules/
