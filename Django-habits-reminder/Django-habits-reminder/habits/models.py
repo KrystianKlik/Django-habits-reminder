@@ -9,6 +9,7 @@ class Habits(models.Model):
     name = models.CharField(max_length=100)
     days = models.PositiveIntegerField()
     status = models.BooleanField(default = False)
+    implement = models.BooleanField(default = False)
     priority = models.SmallIntegerField(default=1, validators=[MaxValueValidator(10),MinValueValidator(1)])
 
     def __str__(self):

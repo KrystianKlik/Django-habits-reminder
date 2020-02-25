@@ -80,6 +80,7 @@
     <Folder Include="habits\static\admin\js\vendor\select2\" />
     <Folder Include="habits\static\admin\js\vendor\select2\i18n\" />
     <Folder Include="habits\static\admin\js\vendor\xregexp\" />
+    <Folder Include="habits\static\typescript\" />
     <Folder Include="habits\static\scss\" />
     <Folder Include="habits\templates\" />
     <Folder Include="habits\templates\habits\" />
@@ -216,6 +217,10 @@
     <Content Include="habits\static\scss\variables.scss">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="habits\static\typescript\ajax.ts">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="habits\static\typescript\tsconfig.json" />
     <Content Include="habits\templates\habits\base.html" />
     <Content Include="habits\templates\habits\habits_confirm_delete.html" />
     <Content Include="habits\templates\habits\habits_form.html" />

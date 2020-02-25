@@ -2,22 +2,21 @@
 
 {% block content %}
 
-<a href="{% url 'register' %}" >register</a>
-
     {% for habit in habits %}
-        <article class="media content-section">
+        <article class="habit-wrapper">
           <div class="media-body">
             <p class="article-content">{{ habit.name }}</p>
+              <p>{{ habit.pk }}</p>
             <p>{{ habit.status }}</p>
               {% if habit.status %}
-           <input type="checkbox" id="done_checkbox" name="habit" checked>
+           <input type="checkbox" value="{{ habit.pk }}" class="habit-checkbox" id="habit-checkbox_{{ habit.pk }}" name="habit" checked>
               {% else %}
-           <input type="checkbox" id="done_checkbox" name="habit">
+           <input type="checkbox" value="{{ habit.pk }}" class="habit-checkbox" id="habit-checkbox_{{ habit.pk }}" name="habit">
               {% endif %}
            <label for="habit">Done?</label>
           </div>
         </article>
     {% endfor %}
-
 {% endblock content %}
 
+{% block scripts %}<script src="../../static/typescript/ajax.js"></script>{% endblock %}

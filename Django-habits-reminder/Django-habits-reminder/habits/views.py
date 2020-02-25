@@ -1,7 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from django.contrib.auth.models import User
+from django.views.decorators.csrf import csrf_exempt
 from .models import Habits
 
 
@@ -12,7 +13,7 @@ class HabitsListView(ListView):
     ordering = ['priority']
 
     def get_queryset(self):
-        return Habits.objects.filter(user=self.request.user)
+        return Habits.objects.filter(user=self.request.user).filter(implement=True)
 
 class HabitsCreateView(LoginRequiredMixin, CreateView):
     model = Habits
@@ -47,3 +48,13 @@ class HabitsDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
          if self.request.user == habits.user:
              return True
          return False
+
+@csrf_exempt
+def ChangeHabitStatus(request, id):
+    model = Habits.objects.get(pk = id)
+    if(model.status == True):
+        model.status=False
+    else:
+        model.status=True
+    model.save()
+    return redirect('index') 
