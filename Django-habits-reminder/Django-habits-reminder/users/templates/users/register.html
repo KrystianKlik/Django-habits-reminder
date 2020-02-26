@@ -5,12 +5,29 @@
     <form method="post">
         {% csrf_token %}
         <fieldset>
-            <legend>Join Today</legend>  
-            {{ form.as_p }}
+            <legend>Log in</legend>  
+   <div class="login-form">
+    {{ form.username }}
+    </div>
+       <div class="login-form">
+    {{ form.first_name }}
+    </div>
+       <div class="login-form">
+    {{ form.last_name }}
+    </div>
+       <div class="login-form">
+    {{ form.email }}
+    </div>
+           <div class="login-form">
+    {{ form.password1 }}
+    </div>
+           <div class="login-form">
+    {{ form.password2 }}
+    </div>
         </fieldset>
-        <button type="submit">Sign Up</button>
+        <button type="submit">Login</button>
     </form>
-    <small>Already Have An Accout? <a href="{% url 'login' %}">Log in</a></small>
+    <small>Need An Accout? <a href="{% url 'register' %}">Create one</a></small>
 </div>
 
 {% endblock content %}

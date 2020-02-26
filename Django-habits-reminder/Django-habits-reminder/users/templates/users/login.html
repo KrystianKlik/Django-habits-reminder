@@ -1,12 +1,22 @@
 ﻿{% extends "habits/base.html" %}
 
+{% load crispy_forms_tags %}
+
 {% block content %}
 <div class="content-register">
     <form method="post">
         {% csrf_token %}
         <fieldset>
             <legend>Log in</legend>  
-            {{ form.as_p }}
+   <div class="login-form">
+   username
+    {{ form.username }}
+    </div>
+       <div class="login-form">
+       password
+    {{ form.password }}
+    </div>
+   
         </fieldset>
         <button type="submit">Login</button>
     </form>
