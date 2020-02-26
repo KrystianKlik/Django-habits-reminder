@@ -211,10 +211,16 @@
     <Content Include="habits\static\admin\js\vendor\xregexp\xregexp.js" />
     <Content Include="habits\static\admin\js\vendor\xregexp\xregexp.min.js" />
     <Content Include="habits\static\main.scss" />
-    <Content Include="habits\static\scss\login.scss">
+    <Content Include="habits\static\scss\_forms.scss">
       <SubType>Code</SubType>
     </Content>
-    <Content Include="habits\static\scss\variables.scss">
+    <Content Include="habits\static\scss\_login.scss">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="habits\static\scss\_variables.scss">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="habits\static\scss\_habits.scss">
       <SubType>Code</SubType>
     </Content>
     <Content Include="habits\static\typescript\ajax.ts">
@@ -222,6 +228,8 @@
     </Content>
     <Content Include="habits\static\typescript\tsconfig.json" />
     <Content Include="habits\templates\habits\base.html" />
+    <Content Include="habits\templates\habits\habits-list.html" />
+    <Content Include="habits\templates\habits\habits.html" />
     <Content Include="habits\templates\habits\habits_confirm_delete.html" />
     <Content Include="habits\templates\habits\habits_form.html" />
     <Content Include="habits\templates\habits\home.html" />

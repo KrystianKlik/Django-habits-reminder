@@ -1,4 +1,44 @@
+/*media queries breakpoints*/
 .content-register {
   color: green; }
+
+.habit-wrapper {
+  display: flex;
+  border: red 1px solid;
+  justify-content: center;
+  align-content: center;
+  margin: 10px 20vh; }
+
+.done-checkbox {
+  display: flex;
+  flex-direction: row;
+  align-items: center; }
+
+.done-label {
+  margin: 0;
+  margin-right: 10px; }
+
+.habit-wrapper > p, .done-checkbox > p {
+  margin: 20px; }
+
+.header-list {
+  text-align: center; }
+
+.list-buttons {
+  display: flex;
+  justify-content: center;
+  flex-direction: column; }
+
+@media only screen and (max-width: 960px) {
+  .habit-wrapper {
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 10px; } }
+
+.text-center {
+  text-align: center; }
+
+.full-width {
+  width: 100%; }
 
 /*# sourceMappingURL=main.css.map */

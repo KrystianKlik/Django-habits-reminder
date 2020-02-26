@@ -5,7 +5,12 @@
     <form method="post">
         {% csrf_token %}
         <fieldset>
-            <legend>Habit</legend>  
+        {% if object.name is null %}
+              <legend>Create a new habit</legend>
+              {% else %}
+            <legend>Edit habit "{{ object.name }}"</legend> 
+            {% endif %} 
+
             {{ form.as_p }}
         </fieldset>
         <button type="submit">Save</button>

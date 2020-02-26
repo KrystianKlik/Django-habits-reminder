@@ -1,11 +1,13 @@
 from django.urls import path
-from .views import HabitsListView, HabitsCreateView, HabitsUpdateView, HabitsDeleteView, ChangeHabitStatus
+from .views import HabitsListView, HabitsCreateView, HabitsUpdateView, HabitsDeleteView, ChangeHabitStatus, HabitsListSetup, ChangeImplementStatus
 
 urlpatterns = [
-    path('', HabitsListView.as_view(), name='index'),
-    path('habits/new/', HabitsCreateView.as_view() , name='habit-create'),
-    path('habits/<int:pk>/update/', HabitsUpdateView.as_view() , name='habit-update'),
-    path('habits/<int:pk>/delete/', HabitsDeleteView.as_view() , name='habit-delete'),
+    path('', HabitsListView.as_view(), name='habits'),
+    path('list/', HabitsListSetup.as_view(), name='habits-list'),
+    path('new/', HabitsCreateView.as_view() , name='habit-create'),
+    path('<int:pk>/update/', HabitsUpdateView.as_view() , name='habit-update'),
+    path('<int:pk>/delete/', HabitsDeleteView.as_view() , name='habit-delete'),
     #ajax calls
-    path('habits/<int:id>/habitstatus', ChangeHabitStatus, name='habit-change-status')
+    path('<int:id>/habitstatus', ChangeHabitStatus, name='habit-change-status'),
+    path('<int:id>/implementstatus', ChangeImplementStatus, name='habit-change-implement'),
     ]

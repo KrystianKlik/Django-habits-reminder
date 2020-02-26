@@ -1,0 +1,40 @@
+﻿{% extends "habits/base.html" %}
+
+{% block content %}
+
+<h1 class="header-list">Habits List</h1>
+<h3 class="text-center"><a href="{% url 'habit-create' %}">Would you like to create a new habit?</a></h3>
+    {% for habit in habits %}
+        <article class="habit-wrapper">
+            <div class="done-checkbox">
+                 <label class="done-label" for="habit">Implemented?</label>
+                  {% if habit.implement %}
+               <input type="checkbox" value="{{ habit.pk }}" class="habit-implement" id="habit-implement-{{ habit.pk }}" name="implement" checked>
+                  {% else %}
+               <input type="checkbox" value="{{ habit.pk }}" class="habit-implement" id="habit-checkbox-{{ habit.pk }}" name="implement">
+                  {% endif %}
+            </div>
+            <p class="article-content">{{ habit.name }}</p>
+              <p>Pk for test: ({{ habit.pk }})</p>
+              <div class="done-checkbox">
+                  <label class="done-label" for="habit">Done?</label>
+                  {% if habit.status %}
+               <input type="checkbox" value="{{ habit.pk }}" disabled class="habit-checkbox" id="habit-checkbox_{{ habit.pk }}" name="habit" checked>
+                  {% else %}
+               <input type="checkbox" value="{{ habit.pk }}" disabled class="habit-checkbox" id="habit-checkbox_{{ habit.pk }}" name="habit">
+                  {% endif %}
+                  <p class="list-priority">Priority: {{ habit.priority }}</p>
+                  <p>Days: {{habit.days}}</p>
+               </div>
+               <div class="list-buttons">
+               <a href="{% url 'habit-update' habit.pk %}">Modify</a>
+               <a href="{% url 'habit-delete' habit.pk %}">Delete</a>
+               </div>
+        </article>
+    {% endfor %}
+
+
+
+{% endblock content %}
+
+{% block scripts %}<script src="../../static/typescript/ajax.js"></script>{% endblock %}
