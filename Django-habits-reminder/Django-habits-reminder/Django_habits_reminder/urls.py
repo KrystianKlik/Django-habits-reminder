@@ -17,7 +17,7 @@ from habits import views as habits
 
 urlpatterns = [
     path('', habits.index, name='home'),
-    path('habits/', include('habits.urls')),
+    path('habits/', login_required(include('habits.urls'))),
     path('admin/', admin.site.urls),
     path('register/', users.register, name='register'),    
     path('login/', auth_views.LoginView.as_view(template_name = 'users/login.html') , name='login'),
