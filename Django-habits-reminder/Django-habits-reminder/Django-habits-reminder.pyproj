@@ -238,6 +238,9 @@
     <Content Include="requirements.txt" />
     <Content Include="users\templates\users\login.html" />
     <Content Include="users\templates\users\logout.html" />
+    <Content Include="users\templates\users\password_reset_confirm.html" />
+    <Content Include="users\templates\users\password_reset_done.html" />
+    <Content Include="users\templates\users\password_reset.html" />
     <Content Include="users\templates\users\register.html" />
   </ItemGroup>
   <ItemGroup>

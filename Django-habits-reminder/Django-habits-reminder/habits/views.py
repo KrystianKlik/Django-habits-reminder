@@ -5,15 +5,7 @@ from django.contrib.auth.models import User
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from django.core.management.base import NoArgsCommand
 from .models import Habits
-
-# Wiem że to nie jest dobre rozwiązanie w następnym projekcie o wiele lepiej bym to rozwiązał w sensie całą architekturę
-import sys
-sys.path.append("..")
-from users.models import Profile
-
-
 
 def index(request):
     return render(request, 'habits/index.html')
