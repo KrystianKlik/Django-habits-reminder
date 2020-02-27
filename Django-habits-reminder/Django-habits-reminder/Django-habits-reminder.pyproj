@@ -234,7 +234,7 @@
     <Content Include="habits\templates\habits\habits_form.html" />
     <Content Include="habits\templates\habits\home.html" />
     <Content Include="habits\templates\habits\index.html" />
-    <Content Include="media\profile-placeholder.png" />
+    <Content Include="media\default.jpg" />
     <Content Include="requirements.txt" />
     <Content Include="users\templates\users\login.html" />
     <Content Include="users\templates\users\logout.html" />

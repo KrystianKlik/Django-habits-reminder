@@ -12,10 +12,10 @@ class Profile(models.Model):
     def __str__(self):
         return self.user.username
 
-    def save(self):
+    def save(self, *args, **kwargs):
         super().save()
 
-        img = Image.open(self.image.path)
+        img = Image.open(self.image.path).convert('RGB')
         
         if img.height > 250 or img.width > 250:
             output_size = (250,250)

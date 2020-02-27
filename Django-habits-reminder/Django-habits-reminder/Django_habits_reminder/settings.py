@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'sass_processor',
     'habits.apps.habitsConfig',
     'users.apps.usersConfig',
+    'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
