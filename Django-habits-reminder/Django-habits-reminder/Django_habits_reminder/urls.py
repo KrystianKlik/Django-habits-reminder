@@ -10,6 +10,7 @@ from django.contrib.auth.views import LoginView, LogoutView
 
 from django.conf import settings
 from django.conf.urls.static import static
+from django.contrib.auth.decorators import login_required
 
 from users import views  as users
 from habits import views as habits
@@ -17,7 +18,7 @@ from habits import views as habits
 
 urlpatterns = [
     path('', habits.index, name='home'),
-    path('habits/', login_required(include('habits.urls'))),
+    path('habits/', include('habits.urls')),
     path('admin/', admin.site.urls),
     path('register/', users.register, name='register'),    
     path('login/', auth_views.LoginView.as_view(template_name = 'users/login.html') , name='login'),
