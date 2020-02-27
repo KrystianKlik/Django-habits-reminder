@@ -148,5 +148,9 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'krystianklik@gmail.com'
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASSWORD')
 
+CELERY_BROKER_URL = 'redis://h:p3cf76dd3235cc1baa6aa432aec80434344403065858ad896eb66b87156cafca4@ec2-52-17-153-192.eu-west-1.compute.amazonaws.com:10549'
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZE = 'json'
+
 
 
