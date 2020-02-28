@@ -32,10 +32,16 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Django_habits_reminder\celery.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="habits\admin.py" />
     <Compile Include="habits\apps.py" />
     <Compile Include="habits\migrations\__init__.py" />
     <Compile Include="habits\models.py" />
+    <Compile Include="habits\tasks.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="habits\tests.py" />
     <Compile Include="habits\urls.py">
       <SubType>Code</SubType>
@@ -57,6 +63,7 @@
     <Compile Include="users\signals.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="users\tasks.py" />
     <Compile Include="users\tests.py" />
     <Compile Include="users\views.py" />
     <Compile Include="users\__init__.py" />
@@ -80,6 +87,7 @@
     <Folder Include="habits\static\admin\js\vendor\select2\" />
     <Folder Include="habits\static\admin\js\vendor\select2\i18n\" />
     <Folder Include="habits\static\admin\js\vendor\xregexp\" />
+    <Folder Include="habits\static\img\" />
     <Folder Include="habits\static\typescript\" />
     <Folder Include="habits\static\scss\" />
     <Folder Include="habits\templates\" />
@@ -211,12 +219,14 @@
     <Content Include="habits\static\admin\js\vendor\xregexp\xregexp.js" />
     <Content Include="habits\static\admin\js\vendor\xregexp\xregexp.min.js" />
     <Content Include="habits\static\main.scss" />
+    <Content Include="habits\static\scss\web.config" />
     <Content Include="habits\static\scss\_forms.scss">
       <SubType>Code</SubType>
     </Content>
     <Content Include="habits\static\scss\_login.scss">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="habits\static\scss\_main.scss" />
     <Content Include="habits\static\scss\_variables.scss">
       <SubType>Code</SubType>
     </Content>
@@ -234,6 +244,7 @@
     <Content Include="habits\templates\habits\habits_form.html" />
     <Content Include="habits\templates\habits\home.html" />
     <Content Include="habits\templates\habits\index.html" />
+    <Content Include="users\templates\users\password_reset_complete.html" />
     <Content Include="media\default.jpg" />
     <Content Include="requirements.txt" />
     <Content Include="users\templates\users\login.html" />

@@ -1,4 +1,5 @@
 /*media queries breakpoints*/
+/*images*/
 .content-register {
   color: green; }
 
@@ -35,7 +36,6 @@
     align-items: center;
     margin: 10px 10px; } }
 
-/*--------*/
 div.login-form {
   margin-top: 15px; }
 
