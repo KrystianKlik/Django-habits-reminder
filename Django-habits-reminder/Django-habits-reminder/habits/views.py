@@ -103,21 +103,13 @@ def AllHabitsAreCompleted(request):
         if profile.longest_strike < profile.current_strike_count:
             profile.longest_strike = profile.current_strike_count
         profile.did_all_habits = True
-        profile.save()
 
-    return redirect('habits-list') 
-    
-@csrf_exempt
-def SubstractStrike(request):
-    profile = request.user.profile
-    habits = Habits.objects.filter(user = request.user)
-
-    allDoneHabits = habits.filter(status = True).count()
-    allHabits = habits.count()
-
-    if profile.did_all_habits == True:
+    elif profile.did_all_habits == True:
         profile.current_strike_count =  profile.current_strike_count - 1
         if profile.longest_strike > profile.current_strike_count:
             profile.longest_strike = profile.current_strike_count
         profile.did_all_habits = False
-        profile.save()
+
+    profile.save()
+    return redirect('habits-list') 
+    

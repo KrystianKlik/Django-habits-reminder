@@ -12,9 +12,9 @@ $(function () {
             alert("You have change habit id: " + id);
         });
     });
-    //In case when there are all habits checked
+    //In case when there are all habits checked or all - 1
     $(".habit-checkbox").change(function () {
-        if ($('.habit-checkbox:checked').length == $('.habit-checkbox').length) {
+        if ($('.habit-checkbox:checked').length == $('.habit-checkbox').length || $('.habit-checkbox:checked').length == $('.habit-checkbox').length - 1) {
             console.log($('.habit-checkbox:checked').length);
             $.ajax({
                 method: "POST",
@@ -22,17 +22,6 @@ $(function () {
             })
                 .done(function () {
                 alert("You did all habits, congratulations");
-            });
-        }
-        //In case when there are almost all
-        if ($('.habit-checkbox:checked').length == $('.habit-checkbox').length - 1) {
-            console.log($('.habit-checkbox:checked').length);
-            $.ajax({
-                method: "POST",
-                url: "/habits/substract-strike/",
-            })
-                .done(function () {
-                alert("You almost did all habits, congratulations");
             });
         }
     });
