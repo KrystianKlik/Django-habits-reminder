@@ -5,6 +5,7 @@ from PIL import Image
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     habits_quantity = models.PositiveIntegerField(default = 0)
+    did_all_habits = models.BooleanField(default = False)
     current_strike_count = models.PositiveIntegerField(default = 0)
     longest_strike = models.PositiveIntegerField(default = 0)
     image = models.ImageField(default='default.jpg', upload_to='profile_pics')
