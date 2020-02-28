@@ -1,5 +1,7 @@
 from django.urls import path
-from .views import HabitsListView, HabitsCreateView, HabitsUpdateView, HabitsDeleteView, ChangeHabitStatus, HabitsListSetup, ChangeImplementStatus
+from .views import (HabitsListView, HabitsCreateView, HabitsUpdateView, HabitsDeleteView, 
+                    ChangeHabitStatus, HabitsListSetup, ChangeImplementStatus, 
+                    AllHabitsAreCompleted, SubstractStrike)
 
 urlpatterns = [
     path('', HabitsListView.as_view(), name='habits'),
@@ -10,4 +12,6 @@ urlpatterns = [
     #ajax calls
     path('<int:id>/habitstatus', ChangeHabitStatus, name='habit-change-status'),
     path('<int:id>/implementstatus', ChangeImplementStatus, name='habit-change-implement'),
+    path('allhabbitsarecompleted/', AllHabitsAreCompleted, name="habits-all-completed" ),
+    path('substract-strike/', SubstractStrike, name="substract-strikes"),
     ]

@@ -3,9 +3,10 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from django.contrib.auth.models import User
 from django.views.decorators.csrf import csrf_exempt
-from django.contrib.auth.decorators import login_required
+
 from django.contrib import messages
 from .models import Habits
+
 
 def index(request):
     return render(request, 'habits/index.html')
@@ -65,12 +66,10 @@ class HabitsDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
              return True
          return False
 
+
 @csrf_exempt
 def ChangeHabitStatus(request, id):
     
-    profile = request.user.profile.current_strike_count + 1
-    profile.save()
-
     model = Habits.objects.get(pk = id)
     if(model.status == True):
         model.status=False
@@ -89,6 +88,36 @@ def ChangeImplementStatus(request, id):
     model.save()
     return redirect('habits-list') 
 
-def AllHabitsAreDone():
-    pass
 
+@csrf_exempt
+def AllHabitsAreCompleted(request):
+    profile = request.user.profile
+    habits = Habits.objects.filter(user = request.user)
+
+    allDoneHabits = habits.filter(status = True).count()
+    allHabits = habits.count()
+ 
+    if allHabits == allDoneHabits:
+        # If user did done all habits then it adds +1 to current strike plus checks if current strike is bigger then longest recored strike
+        profile.current_strike_count =  profile.current_strike_count + 1
+        if profile.longest_strike < profile.current_strike_count:
+            profile.longest_strike = profile.current_strike_count
+        profile.did_all_habits = True
+        profile.save()
+
+    return redirect('habits-list') 
+    
+@csrf_exempt
+def SubstractStrike(request):
+    profile = request.user.profile
+    habits = Habits.objects.filter(user = request.user)
+
+    allDoneHabits = habits.filter(status = True).count()
+    allHabits = habits.count()
+
+    if profile.did_all_habits == True:
+        profile.current_strike_count =  profile.current_strike_count - 1
+        if profile.longest_strike > profile.current_strike_count:
+            profile.longest_strike = profile.current_strike_count
+        profile.did_all_habits = False
+        profile.save()
