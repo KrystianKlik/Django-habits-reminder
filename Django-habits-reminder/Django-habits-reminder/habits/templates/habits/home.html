@@ -1,10 +1,11 @@
-﻿{% extends "habits/base.html" %}
+{% extends "habits/base.html" %}
+{% load crispy_forms_tags %}
 
  {% block title %}Home{% endblock %}
 
 {% block content %}
 
-<div class="media">
+<div class="content-register">
     <img class="user-image" src="{{ user.profile.image.url }}">
     <div class="user-info">
         <h2>Hello {{ user.username }}</h2>    
@@ -21,9 +22,9 @@
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         <fieldset>
-            <legend>Profile Info</legend>  
-            {{ u_form.as_p }}
-            {{ p_form.as_p }}
+            <legend>Update Profile Info</legend>  
+            {{ u_form|crispy }}
+            {{ p_form|crispy }}
         </fieldset>
         <button type="submit">Update</button>
     </form>

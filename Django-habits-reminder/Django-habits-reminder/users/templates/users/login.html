@@ -1,7 +1,8 @@
-﻿{% extends "habits/base.html" %}
+{% extends "habits/base.html" %}
+
+{% block title %}Login{% endblock %}
 
 {% load crispy_forms_tags %}
-
 {% block content %}
 <div class="content-register">
     <form method="post">
@@ -12,6 +13,7 @@
         </fieldset>
         <button type="submit">Login</button>
     </form>
+    <small>You don't remember <a href="{% url 'password-reset' %}">password?</a></small>
     <small>Need An Accout? <a href="{% url 'register' %}">Create one</a></small>
 </div>
 
