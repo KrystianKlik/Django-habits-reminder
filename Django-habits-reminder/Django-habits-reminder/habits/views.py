@@ -80,12 +80,20 @@ def ChangeHabitStatus(request, id):
 
 @csrf_exempt
 def ChangeImplementStatus(request, id):
-    model = Habits.objects.get(pk = id)
-    if(model.implement == True):
-        model.implement=False
+    habits = Habits.objects.filter(user = request.user.id)
+    selectedHabit = Habits.objects.get(pk = id)
+     
+    if(selectedHabit.implement == True):
+        selectedHabit.implement=False
     else:
-        model.implement=True
-    model.save()
+        selectedHabit.implement=True
+    selectedHabit.save()
+
+    habitsCount = habits.filter(implement = True).count()
+    #Update habits quantity on profile page
+    profile = request.user.profile
+    profile.habits_quantity = habitsCount
+    profile.save()
     return redirect('habits-list') 
 
 

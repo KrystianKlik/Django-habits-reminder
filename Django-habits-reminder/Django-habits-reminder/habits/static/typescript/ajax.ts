@@ -21,8 +21,10 @@
             url: "/habits/allhabbitsarecompleted/",
         })
             .done(function () {
-
-                 alert("You did all habits, congratulations")
+                if ($('.habit-checkbox:checked').length == $('.habit-checkbox').length) {
+                    alert("You did all habits, congratulations")
+                }
+                
             });
         }
 
