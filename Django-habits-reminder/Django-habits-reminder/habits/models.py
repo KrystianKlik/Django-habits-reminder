@@ -7,7 +7,6 @@ from django.urls import reverse
 class Habits(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
-    days = models.PositiveIntegerField()
     status = models.BooleanField(default = False)
     implement = models.BooleanField(default = False)
     priority = models.SmallIntegerField(default=1, validators=[MaxValueValidator(10),MinValueValidator(1)])
