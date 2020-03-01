@@ -16,19 +16,17 @@ class HabitsListView(ListView):
     model = Habits
     template_name = 'habits/habits.html'
     context_object_name = 'habits'
-    ordering = ['priority']
 
     def get_queryset(self):
-        return Habits.objects.filter(user=self.request.user).filter(implement=True)
+        return Habits.objects.filter(user=self.request.user).filter(implement=True).order_by('-priority')
 
 class HabitsListSetup(ListView):
     model = Habits
     template_name = 'habits/habits-list.html'
     context_object_name = 'habits'
-    ordering = ['priority', 'implement']
 
     def get_queryset(self):
-        return Habits.objects.filter(user=self.request.user)
+        return Habits.objects.filter(user=self.request.user).order_by('-implement' ,'-priority')
 
 class HabitsCreateView(LoginRequiredMixin, CreateView):
     model = Habits
