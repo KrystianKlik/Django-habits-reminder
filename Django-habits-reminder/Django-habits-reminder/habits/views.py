@@ -3,6 +3,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from django.contrib.auth.models import User
 from django.views.decorators.csrf import csrf_exempt
+from django.template import Context
 
 from django.contrib import messages
 from .models import Habits
@@ -56,7 +57,8 @@ class HabitsUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
 class HabitsDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Habits
-    success_url = 'habits/list'
+    success_url = '/habits/list'
+    context_object_name = 'habits'
 
     def test_func(self):
          habits = self.get_object()

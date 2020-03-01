@@ -6,7 +6,7 @@
         {% csrf_token %}
         <fieldset>
             <legend>Delete Post</legend>  
-            <h2>Are you sure you want to delete the habit "{{ object.title }}"</h2>
+            <h2>Are you sure you want to delete "{{ object.name }}"</h2>
         </fieldset>
         <button type="submit">Yes, Delete</button>
         <a href="{% url 'habits-list' %}">Cancel</a>
