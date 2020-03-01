@@ -6,7 +6,7 @@ $(function () {
         //console.log(id)
         $.ajax({
             method: "POST",
-            url: "/habits/" + id + "/habitstatus/",
+            url: "/habits/" + id + "/habitstatus",
         })
             .done(function () {
             alert("You have change habit id: " + id);
@@ -18,7 +18,7 @@ $(function () {
             console.log($('.habit-checkbox:checked').length);
             $.ajax({
                 method: "POST",
-                url: "/habits/allhabbitsarecompleted/",
+                url: "/habits/allhabbitsarecompleted",
             })
                 .done(function () {
                 if ($('.habit-checkbox:checked').length == $('.habit-checkbox').length) {
@@ -33,7 +33,7 @@ $(function () {
         console.log(id);
         $.ajax({
             method: "POST",
-            url: "/habits/" + id + "/implementstatus/",
+            url: "/habits/" + id + "/implementstatus",
         })
             .done(function () {
             alert("You have implemented habit id: " + id);
