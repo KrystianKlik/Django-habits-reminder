@@ -10,16 +10,3 @@ from django.contrib.auth.models import User
 def reset_habbits_status(): 
     habits = Habits.objects.all().update(status=False)
     habits.save()
-
-
-#    habitsCount =  Habits.objects.all().count()
-#    doneHabits = Habits.objects.filter().count()
-#    profile = User.Profile.current_strike_count
-#    if(habitsCount == doneHabits):
-#        profile = profile + 1
-#    else:
-#        profile = 0
-
-#    profile.save()
-#    habits = Habits.objects.all().update(status=False)
-#    habits.save()
