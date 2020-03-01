@@ -8,14 +8,16 @@
   flex-direction: row;
   border: red 1px solid;
   border-radius: 30px;
-  justify-content: center;
+  justify-content: space-around;
   align-content: center;
   margin: 10px 20vh;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  padding: 0 10px; }
 
 .habit-text {
   display: flex;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  word-wrap: break-word; }
 
 .habits-done {
   display: flex;
@@ -34,7 +36,8 @@
   margin-right: 10px; }
 
 .habit-wrapper > p, .done-checkbox > p {
-  margin: 20px; }
+  margin: 20px 10px;
+  text-align: center; }
 
 .header-list {
   text-align: center; }
