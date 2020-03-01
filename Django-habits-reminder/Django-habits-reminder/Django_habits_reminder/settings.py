@@ -90,6 +90,14 @@ DATABASES = {
         'PORT' : '5432'
     }
 }
+# Because I have a free cloud postgresql I can't create a new database for testing 
+# so I'm just using simple sqlite3 db
+import sys
+if 'test' in sys.argv:
+    DATABASES['default'] = {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'mydatabase'
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
