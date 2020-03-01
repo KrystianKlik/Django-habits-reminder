@@ -1,5 +1,6 @@
 {% extends "habits/base.html" %}
 
+{% load crispy_forms_tags %}
 {% block content %}
 <div class="content-register">
     <form method="post">
@@ -11,7 +12,7 @@
             <legend>Edit habit "{{ object.name }}"</legend> 
             {% endif %} 
 
-            {{ form.as_p }}
+            {{ form|crispy }}
         </fieldset>
         <button type="submit">Save</button>
     </form>
