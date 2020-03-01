@@ -1,21 +1,21 @@
 {% extends "habits/base.html" %}
 
 {% block content %}
-<h2>AA</h2>
 
     {% for habit in habits %}
         <article class="habit-wrapper">
-          <div class="media-body">
-            <p class="article-content">{{ habit.name }}</p>
-              <p>{{ habit.pk }}</p>
-            <p>{{ habit.status }}</p>
+
+            <p class="habit-text">{{ habit.name }}</p>
+            <p>Priority: {{ habit.priority }}</p>
+
+            <div class="habits-done">
               {% if habit.status %}
            <input type="checkbox" value="{{ habit.pk }}" class="habit-checkbox" id="habit-checkbox_{{ habit.pk }}" name="habit" checked>
               {% else %}
            <input type="checkbox" value="{{ habit.pk }}" class="habit-checkbox" id="habit-checkbox_{{ habit.pk }}" name="habit">
               {% endif %}
-           <label for="habit">Done?</label>
-          </div>
+           <label class="chekbox-label" for="habit">Done?</label>
+         </div>
         </article>
     {% endfor %}
 
