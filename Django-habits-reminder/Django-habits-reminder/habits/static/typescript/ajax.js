@@ -6,7 +6,7 @@ $(function () {
         //console.log(id)
         $.ajax({
             method: "POST",
-            url: "/habits/" + id + "/habitstatus",
+            url: "/habits/" + id + "/habitstatus/",
         })
             .done(function () {
             alert("You have change habit id: " + id);
@@ -33,7 +33,7 @@ $(function () {
         console.log(id);
         $.ajax({
             method: "POST",
-            url: "/habits/" + id + "/implementstatus",
+            url: "/habits/" + id + "/implementstatus/",
         })
             .done(function () {
             alert("You have implemented habit id: " + id);
