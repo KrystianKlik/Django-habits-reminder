@@ -17,8 +17,8 @@
         if ($('.habit-checkbox:checked').length == $('.habit-checkbox').length || $('.habit-checkbox:checked').length == $('.habit-checkbox').length - 1) {
             console.log($('.habit-checkbox:checked').length)
         $.ajax({
-            method: "POST",
-            url: "/habits/allhabbitsarecompleted",
+            method: "GET",
+            url: "/habits/allhabbitsarecompleted/",
         })
             .done(function () {
                 if ($('.habit-checkbox:checked').length == $('.habit-checkbox').length) {
