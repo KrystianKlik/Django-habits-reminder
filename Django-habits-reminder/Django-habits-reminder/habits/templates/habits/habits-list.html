@@ -24,7 +24,6 @@
                <input type="checkbox" value="{{ habit.pk }}" disabled class="habit-checkbox" id="habit-checkbox_{{ habit.pk }}" name="habit">
                   {% endif %}
                   <p class="list-priority">Priority: {{ habit.priority }}</p>
-                  <p>Days: {{habit.days}}</p>
                </div>
                <div class="list-buttons">
                <a href="{% url 'habit-update' habit.pk %}">Modify</a>

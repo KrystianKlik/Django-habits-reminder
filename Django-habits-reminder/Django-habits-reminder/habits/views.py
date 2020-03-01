@@ -16,7 +16,7 @@ class HabitsListView(ListView):
     model = Habits
     template_name = 'habits/habits.html'
     context_object_name = 'habits'
-    ordering = ['priority' ]
+    ordering = ['priority']
 
     def get_queryset(self):
         return Habits.objects.filter(user=self.request.user).filter(implement=True)
@@ -32,7 +32,7 @@ class HabitsListSetup(ListView):
 
 class HabitsCreateView(LoginRequiredMixin, CreateView):
     model = Habits
-    fields = ['name', 'days', 'priority']
+    fields = ['name',  'priority']
     success_url = '/habits/list/'
 
     def form_valid(self, form):
@@ -42,7 +42,7 @@ class HabitsCreateView(LoginRequiredMixin, CreateView):
 
 class HabitsUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Habits
-    fields = ['name', 'days', 'priority']
+    fields = ['name', 'priority']
     success_url = '/habits/list/'
 
     def form_valid(self, form):
@@ -69,7 +69,6 @@ class HabitsDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
 @csrf_exempt
 def ChangeHabitStatus(request, id):
-    
     model = Habits.objects.get(pk = id)
     if(model.status == True):
         model.status=False
