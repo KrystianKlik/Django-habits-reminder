@@ -30,7 +30,7 @@ class HabitsListSetup(ListView):
 
 class HabitsCreateView(LoginRequiredMixin, CreateView):
     model = Habits
-    fields = ['name',  'priority']
+    fields = ['name',  'priority', 'implement']
     success_url = '/habits/list/'
 
     def form_valid(self, form):
@@ -116,5 +116,5 @@ def AllHabitsAreCompleted(request):
         profile.did_all_habits = False
 
     profile.save()
-    return redirect('habits-list') 
+    return redirect('habits') 
     
